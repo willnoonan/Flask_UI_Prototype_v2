@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<h2>Projects</h2>
+
+<ul>
+    {% for project in projects %}
+        <li>
+            <a href="{{ url_for('projects.single_project_view', project_id=project.id) }}">{{ project }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<a href="newproject">Add a new project</a>
+
+{% endblock content %}

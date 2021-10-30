@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h2>Add new configuration</h2>
+<form action="/newconfiguration" method="post">
+    <input name="name" placeholder="Name" type="text">
+
+    <input type="submit" submit="Register">
+</form>
+
+{% endblock %}

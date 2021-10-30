@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h2>Configurations</h2>
+<ul>
+    {% for config in configs %}
+        <li>
+            <a href="{{ url_for('configurations.single_config_view', config_id=config.id) }}">{{ config }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<a href="newconfiguration">Add a new configuration</a>
+
+
+{% endblock %}
