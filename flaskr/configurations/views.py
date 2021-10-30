@@ -10,9 +10,6 @@ def get_config_byid(int_id):
     config_dict = {config.id:config for config in user_configs}
     return config_dict.get(int_id)
 
-@configurations.route("/test_configurations")
-def test_configs_view():
-    return "<h1>Test: Configurations.</h1>"
 
 @configurations.route("/configurations")
 def configurations_view():
