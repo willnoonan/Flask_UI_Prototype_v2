@@ -24,4 +24,5 @@ app.register_blueprint(projects)
 # 3. Connect to mongodb:
 connect()
 # 4. Run Compass tool, click connect button (optional)
+# To stop server: brew services stop mongodb-community@5.0
 

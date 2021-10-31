@@ -4,7 +4,7 @@ from .models import Proj
 projects = Blueprint("projects", __name__,
                      template_folder="templates")
 
-
+#TODO replace use of user_projects with mongodb
 user_projects = []
 
 def get_project_byid(int_id):
