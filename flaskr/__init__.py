@@ -1,4 +1,5 @@
 from flask import Flask
+from mongoengine import connect
 
 try:
     from flaskr.main import main
@@ -14,4 +15,13 @@ app.register_blueprint(main)
 app.register_blueprint(configurations)
 app.register_blueprint(projects)
 
+#--------------
+# mongodb setup
+#--------------
+# 1a. Install mongodb community edition following directions on their website
+# 1b. Install mongodb Compass tool (optional)
+# 2. Run in terminal to start server: brew services start mongodb-community@5.0
+# 3. Connect to mongodb:
+connect()
+# 4. Run Compass tool, click connect button (optional)
 
