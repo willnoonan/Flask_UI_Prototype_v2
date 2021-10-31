@@ -12,10 +12,12 @@ def get_config_byid(int_id):
     config_dict = {config.id:config for config in user_configs}
     return config_dict.get(int_id)
 
-
+# The following is the link I had to cut out of configurations.html to test use of Configuration model:
+# <a href="{{ url_for('configurations.single_config_view', config_id=config.id) }}">{{ config }}</a>
 @configurations.route("/configurations")
 def configurations_view():
-    return render_template("configurations/configurations.html", configs=user_configs)
+    configs = Configuration.objects()
+    return render_template("configurations/configurations.html", configs=configs)
 
 
 @configurations.route("/configuration/<int:config_id>/")

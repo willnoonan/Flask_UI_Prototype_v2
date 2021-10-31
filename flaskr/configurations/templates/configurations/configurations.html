@@ -5,7 +5,7 @@
 <ul>
     {% for config in configs %}
         <li>
-            <a href="{{ url_for('configurations.single_config_view', config_id=config.id) }}">{{ config }}</a>
+            {{ config }}
         </li>
     {% endfor %}
 </ul>
