@@ -1,8 +1,7 @@
 from flask import Blueprint, redirect, render_template, request, url_for
-from .models import Config
 from .forms import ConfigurationForm
 from .models import Configuration
-from bson.objectid import ObjectId
+
 
 configurations = Blueprint("configurations", __name__,
                            template_folder="templates")
