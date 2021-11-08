@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from .models import Proj
+from .models import Project
+
 
 projects = Blueprint("projects", __name__,
                      template_folder="templates")
@@ -14,7 +16,8 @@ def get_project_byid(int_id):
 
 @projects.route("/projects")
 def projects_view():
-    return render_template("projects/projects.html", projects=user_projects)
+    projs = Project.objects()
+    return render_template("projects/projects.html", projects=projs)
 
 
 @projects.route("/project/<int:project_id>")
