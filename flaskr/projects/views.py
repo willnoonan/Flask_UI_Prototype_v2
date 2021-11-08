@@ -20,10 +20,10 @@ def projects_view():
     return render_template("projects/projects.html", projects=projs)
 
 
-@projects.route("/project/<int:project_id>")
+@projects.route("/project/<string:project_id>")
 def single_project_view(project_id):
-    user_project = get_project_byid(project_id)
-    return render_template("projects/single_project.html", project=user_project)
+    proj = Project.objects.get(id=project_id)
+    return render_template("projects/single_project.html", project=proj)
 
 
 @projects.route("/newproject", methods=["POST", "GET"])
