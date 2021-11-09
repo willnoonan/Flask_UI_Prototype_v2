@@ -1,13 +1,5 @@
-from flaskr.util import GenPage
 import mongoengine as me
 from datetime import datetime
-
-class Proj(GenPage):
-    global_id = 0
-    def __init__(self, name):
-        super().__init__(name)
-        Proj.global_id += 1
-        self.id = Proj.global_id
 
 
 class Project(me.Document):
