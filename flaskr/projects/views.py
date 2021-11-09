@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from .models import Proj
 from .models import Project
+from .forms import ProjectForm
 
 
 projects = Blueprint("projects", __name__,
@@ -26,12 +27,12 @@ def single_project_view(project_id):
     return render_template("projects/single_project.html", project=proj)
 
 
-@projects.route("/newproject", methods=["POST", "GET"])
+@projects.route("/newproject", methods=["GET", "POST"])
 def new_project_view():
-    if request.method == "POST":
-        name = request.form.get("name")
-        if not name:
-            return "failure"
-        user_projects.append(Proj(name))
+    form = ProjectForm()
+    if form.validate_on_submit():
+        proj = Project()
+        proj.name = form.name.data
+        proj.save()
         return redirect(url_for(".projects_view"))
-    return render_template("projects/new_project.html")
+    return render_template("projects/new_project.html", form=form)
