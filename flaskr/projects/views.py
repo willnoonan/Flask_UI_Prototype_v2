@@ -1,18 +1,10 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Proj
 from .models import Project
 from .forms import ProjectForm
 
 
 projects = Blueprint("projects", __name__,
                      template_folder="templates")
-
-#TODO replace use of user_projects with mongodb
-user_projects = []
-
-def get_project_byid(int_id):
-    proj_dict = {proj.id:proj for proj in user_projects}
-    return proj_dict.get(int_id)
 
 
 @projects.route("/projects")
