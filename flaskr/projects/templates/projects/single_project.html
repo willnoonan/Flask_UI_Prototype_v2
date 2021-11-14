@@ -3,6 +3,17 @@
 {% block content %}
 <h2>Project:</h2>
 <h3>{{ project }}</h3>
-
+<br>
+<h4>Configuration:</h4>
+<div class="card mb-3">
+    <h5 class="card-header">
+        {{ project.config }}
+        <br>
+        <small>{{ project.config.time_created }}</small>
+    </h5>
+    <div class="card-body">
+        description goes here
+    </div>
+</div>
 
 {% endblock %}
