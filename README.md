@@ -15,7 +15,7 @@ Note: I only have instructions for mac right now. Execute the following commands
 ----
 Running the project
 -----
-1) You must first pip install Flask
+1) Install dependencies:  pip install -r requirements.txt
 
 2) Then execute the following in a terminal in the project's directory: flask run
 
